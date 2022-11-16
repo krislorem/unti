@@ -1,0 +1,18 @@
+
+i
+java:S1192I"MDefine a constant instead of duplicating this literal "Input again!" 4 times.(Áı°8º¾òÅÈ0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(“×·ôşÿÿÿÿ8³Ò÷ÅÈ0
+–
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¶˜-
+h
+java:S3776%"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(±Æ¤÷
+?
+java:S21409")Use "java.util.Random.nextInt()" instead.(íÚ€ö
+D
+java:S2140]")Use "java.util.Random.nextInt()" instead.(Ô·öÌúÿÿÿÿ
+D
+java:S2140b")Use "java.util.Random.nextInt()" instead.(Ô·öÌúÿÿÿÿ
+x
+java:S3923v"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ˆüîŞ8×ÄõÅÈ0
+n
+java:S3776†"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(¹‘Íıÿÿÿÿ
