@@ -1,5 +1,7 @@
 package org.example.arraytest;
-import java.util.Scanner;
+
+import java.util.Objects;
+
 /**
  * &#064;program: Array operation
  * <p>
@@ -13,143 +15,148 @@ public class ArrayOperator {
     public ArrayOperator ( ) {
     }
     
-    public static void main( String[] args) {
-        Array array = new Array();
-        start();
-        array.setM();
-        array.setN();
-        start2();
-        array.setArr(array.getM(),array.getN());
-        output(array.getArr());
-        enter ();
-        start6 ();
-        output (specificsort ( array.getArr (),array.getM (),array.getN () ) );
-//        enter();
-//        start3();
-//        System.out.println(max(array.getArr()));
-//        start4();
-//        System.out.println(min(array.getArr()));
-//        enter();
-//        start5();
-//        output(trans(array.getArr(),array.getM(),array.getN()));
+    public static void main ( String[] args ) {
+
+//        Array array = new Array ( );
+//        start ( );
+//        array.setM ( );
+//        array.setN ( );
+//        start2 ( );
+//        array.setArr ( array.getM ( ) , array.getN ( ) );
+//        output ( array.getArr ( ) );
+//        enter ( );
+//        start6 ( );
+//        output ( specificsort ( array.getArr ( ) , array.getM ( ) , array.getN ( ) ) );
+        //        enter();
+        //        start3();
+        //        System.out.println(max(array.getArr()));
+        //        start4();
+        //        System.out.println(min(array.getArr()));
+        //        enter();
+        //        start5();
+        //        output(trans(array.getArr(),array.getM(),array.getN()));
+
+    repeatput ( "a","a","1","0","a" );
+    }
     
+    public static void start ( ) {
+        System.out.println ( "input two nums:" );
     }
-    static void start(){
-        System.out.println("input two nums:");
+    
+    public static void start2 ( ) {
+        System.out.println ( "input array:" );
     }
-    static void start2(){
-        System.out.println("input array:");
+    
+    static void start3 ( ) {
+        System.out.print ( "max:\t" );
     }
-    static void start3(){
-        System.out.print("max:\t");
+    
+    static void start4 ( ) {
+        System.out.print ( "min:\t" );
     }
-    static void start4(){
-        System.out.print("min:\t");
+    
+    static void start5 ( ) {
+        System.out.println ( "transform array:\t" );
     }
-    static void start5(){
-        System.out.println("transform array:\t");
+    
+    static void start6 ( ) {
+        System.out.println ( "resort array:\t" );
     }
-    static void start6(){
-        System.out.println("resort array:\t");
+    
+    public static void enter ( ) {
+        System.out.println ( );
     }
-    static void enter(){
-        System.out.println();
-    }
-    static void output(int[][] a){
-        for (int[] ints : a) {
-            for (int j = 0; j < a[0].length; j++) {
-                System.out.print(ints[j] + "\t");
+    
+    public static void output ( int[][] a ) {
+        for ( int[] ints : a ) {
+            for ( int j = 0 ; j < a[ 0 ].length ; j++ ) {
+                System.out.print ( ints[ j ] + "\t" );
             }
-            System.out.println();
+            System.out.println ( );
         }
     }
-    static int min(int[][] a){
-        return comparemin(a);
+    
+    public static int min ( int[][] a ) {
+        return comparemin ( a );
     }
-    static int max(int[][] a){
-        return comparemax(a);
+    
+    public static int max ( int[][] a ) {
+        return comparemax ( a );
     }
-    private static int comparemin(int[][] a) {
-        int min = a[0][0];
-        for (int[] ints : a) {
-            for (int j = 0; j < a[0].length; j++) {
-                if (min > ints[j]) {
-                    min = ints[j];
+    
+    public static int comparemin ( int[][] a ) {
+        int min = a[ 0 ][ 0 ];
+        for ( int[] ints : a ) {
+            for ( int j = 0 ; j < a[ 0 ].length ; j++ ) {
+                if ( min > ints[ j ] ) {
+                    min = ints[ j ];
                 }
             }
         }
         return min;
     }
-    private static int comparemax(int[][] a) {
-        int max = a[0][0];
-        for (int[] ints : a) {
-            for (int j = 0; j < a[0].length; j++) {
-                if (max < ints[j]) {
-                    max = ints[j];
+    
+    public static int comparemax ( int[][] a ) {
+        int max = a[ 0 ][ 0 ];
+        for ( int[] ints : a ) {
+            for ( int j = 0 ; j < a[ 0 ].length ; j++ ) {
+                if ( max < ints[ j ] ) {
+                    max = ints[ j ];
                 }
             }
         }
         return max;
     }
-    static int[][] trans(int[][] a,int m,int n) {
-        int[][] temp = new int[n][m];
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a[i].length; j++) {
-                temp[j][i] = a[i][j];
+    
+    public static int[][] trans ( int[][] a , int m , int n ) {
+        int[][] temp = new int[ n ][ m ];
+        for ( int i = 0 ; i < a.length ; i++ ) {
+            for ( int j = 0 ; j < a[ i ].length ; j++ ) {
+                temp[ j ][ i ] = a[ i ][ j ];
             }
         }
         return temp;
     }
-    static int[][] specificsort ( int[][] a,int m ,int n ) {
-        int[][] temp = new int[m][n];
-        for ( int i = 0 ; i < m - 1; i++ ) {
+    
+    public static int[][] specificsort ( int[][] a , int m , int n ) {
+        int[][] temp = new int[ m ][ n ];
+        for ( int i = 0 ; i < m - 1 ; i++ ) {
             for ( int j = 0 ; j < n - 1 ; j++ ) {
-                if ( a[i][j] > a[i][j + 1] ){
-                    temp[i][j] = a[i][j + 1];
-                    a[i][j + 1] = a[i][j];
-                    a[i][j] = temp[i][j];
+                if ( a[ i ][ j ] > a[ i ][ j + 1 ] ) {
+                    temp[ i ][ j ] = a[ i ][ j + 1 ];
+                    a[ i ][ j + 1 ] = a[ i ][ j ];
+                    a[ i ][ j ] = temp[ i ][ j ];
                 }
             }
         }
-        for (int i = 0; i < m - 1; i++ ) {
+        for ( int i = 0 ; i < m - 1 ; i++ ) {
             for ( int j = 0 ; j < n - 1 ; j++ ) {
-                if ( a[i][0] > a[i + 1][0] ) {
-                    temp[i][j] = a[i + 1][j];
-                    a[i + 1][j] = a[i][j];
-                    a[i][j] = temp[i][j];
+                if ( a[ i ][ 0 ] > a[ i + 1 ][ 0 ] ) {
+                    temp[ i ][ j ] = a[ i + 1 ][ j ];
+                    a[ i + 1 ][ j ] = a[ i ][ j ];
+                    a[ i ][ j ] = temp[ i ][ j ];
                 }
             }
         }
         return a;
     }
-}
-class Array{
-    Scanner scanner = new Scanner(System.in);
-    private int m;
-    private int n;
-    private int[][] arr;
-    public Array(){}
-    public void setArr(int m, int n){
-        arr = new int[m][n];
-        for(int i = 0;i < m;i++){
-            for (int j = 0; j < n; j++) {
-                arr[i][j] = scanner.nextInt();
+    
+    public static void repeatput (  String... strs ) {
+        for ( int i = 0 ; i < strs.length ; i++ ) {
+            if( Objects.equals ( strs[ 0 ] , "0" ) ){
+                break;
             }
+              for ( int j = i + 1 ; j< strs.length ; j++ ) {
+                  if( Objects.equals ( strs[ j ] , "0" ) ){
+                      break;
+                  }
+                  if( ! Objects.equals ( strs[ j ] , strs[ i ] ) ){
+                      strs[i] += strs[ j ];
+                  }
+              }
+                }
+        for ( String s : strs ) {
+            System.out.print ( s );
         }
-    }
-    public void setM(){
-        this.m = scanner.nextInt();
-    }
-    public void setN(){
-        this.n = scanner.nextInt();
-    }
-    public int[][] getArr(){
-        return this.arr;
-    }
-    public int getM(){
-        return this.m;
-    }
-    public int getN(){
-        return this.n;
     }
 }

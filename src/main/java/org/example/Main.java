@@ -9,12 +9,13 @@ package org.example;
  * <p>
  * &#064;create: ${YEAAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
  */
-public class Main implements ArrayMode{
+public class Main {
     public Main(){
     }
     public static void main(String[] args) {
        hello();
        out( funadd(14));
+       
     }
    public static void hello(){
         System.out.println("Hello world!");

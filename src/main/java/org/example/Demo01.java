@@ -1,10 +1,11 @@
 package org.example;
 
+import org.example.arraytest.ArrayOperator;
+
 import java.util.Scanner;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
-
 /**
  * &#064;program: Demo01
  * &#064;description:
@@ -13,7 +14,7 @@ import static java.lang.System.out;
  *
  * @author GK_L2
  */
-public class Demo01 {
+public class Demo01 extends ArrayOperator{
     /**
      * Instantiates a new Demo 01.
      */
@@ -26,9 +27,18 @@ public class Demo01 {
      * @param args the input arguments
      */
     public static void main ( String[] args ) {
+//        Array array = new Array();
         test1 ();
-        test2 ();
-        test3 ();
+//        test2 ();
+//        test3 ();
+//        start();
+//        array.setM();
+//        array.setN();
+//        start2();
+//        array.setArr(array.getM(),array.getN());
+//        output(array.getArr());
+//        enter ();
+//        System.out.println(max(array.getArr()));
     }
     
     /**
@@ -39,11 +49,13 @@ public class Demo01 {
                 String pwd = "";
                 int max = 1000;
                 int min = 9999;
+                int num =3;
                 String answer;
                 boolean isRegister = false;
                 boolean isLogin = false;
+                int count = 0;
                 do {
-                    out.println("1.register 2.sign in 3.lottery 4.exit");
+                    out.println("1.register 2.sign in 3.lottery ");
                     Scanner scanner = new Scanner( in);
                     out.println("select:");
                     int choice = scanner.nextInt();
@@ -53,7 +65,6 @@ public class Demo01 {
                             name = scanner.next();
                             out.println("Password:");
                             pwd = scanner.next();
-                            
                             int cardNum = (int) (Math.random() * (max - min) + min);
                             out.println("Remember：Username        Password            CardNum");
                             out.println(name + "      " + pwd + "      " + cardNum);
@@ -61,19 +72,30 @@ public class Demo01 {
                             break;
                         case 2:
                             if(isRegister) {
-                                while (true) {
+                               while(true) {
                                     out.println("UserName:");
                                     String username = scanner.next();
                                     out.println("Password:");
                                     String userpwd = scanner.next();
                                     if (username.equals(name) && userpwd.equals(pwd)) {
                                         out.println("Welcome!" + username);
+                                         count = 0;
+                                         num = 3;
                                         break;
                                     } else {
-                                        out.println("Input again!");
+                                        num -= 1;
+                                        out.println("Wrong !Input again!(you only have " + num + " choices");
+                                        if(num == 1){
+                                            out.println ( "Wrong !Input again!(you only have " + num + " choice" );
+                                        }else  if (num == 0 ){
+                                            out.println ( "Wrong !");
+                                        }
+                                        count++;
                                     }
+                                   if(count == 3){
+                                       break;
+                                   }
                                 }
-                       
                                 isLogin =true;
                             }else {
                                 out.println("Register First!");
@@ -105,9 +127,6 @@ public class Demo01 {
                                 }
                             }
                             break;
-                        case 4:
-                            out.println("Thanks!");
-                            return;
                         default:
                             out.println("Input again!");
                             break;
@@ -115,13 +134,6 @@ public class Demo01 {
                     out.print("Continue?(y/n)");
                     answer = scanner.next();
                     out.println( );
-                    if ( ! "n".equals ( answer ) ) {
-                        out.println ( "Input again!" );
-                        answer = scanner.next ( );
-                    } else {
-                        out.println ( "Input again!" );
-                        answer = scanner.next ( );
-                    }
                 } while ("y".equals(answer));
                 if ("n".equals(answer)) {
                     out.println("Thanks!");
@@ -217,14 +229,7 @@ public class Demo01 {
                                 output(a, b ,c);
                             }
     
-    /**
-     * Multiply matrix double [ ] [ ].
-     *
-     * @param a the a
-     * @param b the b
-     *
-     * @return the double [ ] [ ]
-     */
+
     public static double[][] multiplyMatrix(double[][] a, double[][] b){
                                 double[][] c = new double[3][3];
                                 for (int i = 0 ; i < 3 ; i++){
@@ -237,13 +242,7 @@ public class Demo01 {
                                 return c;
                             }
     
-    /**
-     * Output.
-     *
-     * @param a the a
-     * @param b the b
-     * @param c the c
-     */
+
     public static void output(double[][] a, double[][] b, double[][] c){
                                 for (int i = 0 ; i < 3; i++){
                                     for (int j = 0 ; j < 3 ; j++){
