@@ -1,5 +1,5 @@
 package org.example.arraytest;
-import java.util.Scanner;
+
 /**
  * &#064;program: Array operation
  * <p>
@@ -34,10 +34,10 @@ public class ArrayOperator {
 //        output(trans(array.getArr(),array.getM(),array.getN()));
     
     }
-    static void start(){
+    public static void start ( ){
         System.out.println("input two nums:");
     }
-    static void start2(){
+    public static void start2 ( ){
         System.out.println("input array:");
     }
     static void start3(){
@@ -52,10 +52,10 @@ public class ArrayOperator {
     static void start6(){
         System.out.println("resort array:\t");
     }
-    static void enter(){
+    public static void enter ( ){
         System.out.println();
     }
-    static void output(int[][] a){
+    public static void output ( int[][] a ){
         for (int[] ints : a) {
             for (int j = 0; j < a[0].length; j++) {
                 System.out.print(ints[j] + "\t");
@@ -63,13 +63,13 @@ public class ArrayOperator {
             System.out.println();
         }
     }
-    static int min(int[][] a){
+    public static int min(int[][] a){
         return comparemin(a);
     }
-    static int max(int[][] a){
+    public static int max(int[][] a){
         return comparemax(a);
     }
-    private static int comparemin(int[][] a) {
+   public static int comparemin(int[][] a) {
         int min = a[0][0];
         for (int[] ints : a) {
             for (int j = 0; j < a[0].length; j++) {
@@ -80,7 +80,7 @@ public class ArrayOperator {
         }
         return min;
     }
-    private static int comparemax(int[][] a) {
+    public static int comparemax(int[][] a) {
         int max = a[0][0];
         for (int[] ints : a) {
             for (int j = 0; j < a[0].length; j++) {
@@ -91,7 +91,7 @@ public class ArrayOperator {
         }
         return max;
     }
-    static int[][] trans(int[][] a,int m,int n) {
+    public static int[][] trans(int[][] a,int m,int n) {
         int[][] temp = new int[n][m];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
@@ -100,7 +100,7 @@ public class ArrayOperator {
         }
         return temp;
     }
-    static int[][] specificsort ( int[][] a,int m ,int n ) {
+    public static int[][] specificsort ( int[][] a,int m ,int n ) {
         int[][] temp = new int[m][n];
         for ( int i = 0 ; i < m - 1; i++ ) {
             for ( int j = 0 ; j < n - 1 ; j++ ) {
@@ -121,35 +121,5 @@ public class ArrayOperator {
             }
         }
         return a;
-    }
-}
-class Array{
-    Scanner scanner = new Scanner(System.in);
-    private int m;
-    private int n;
-    private int[][] arr;
-    public Array(){}
-    public void setArr(int m, int n){
-        arr = new int[m][n];
-        for(int i = 0;i < m;i++){
-            for (int j = 0; j < n; j++) {
-                arr[i][j] = scanner.nextInt();
-            }
-        }
-    }
-    public void setM(){
-        this.m = scanner.nextInt();
-    }
-    public void setN(){
-        this.n = scanner.nextInt();
-    }
-    public int[][] getArr(){
-        return this.arr;
-    }
-    public int getM(){
-        return this.m;
-    }
-    public int getN(){
-        return this.n;
     }
 }

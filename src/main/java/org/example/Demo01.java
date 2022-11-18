@@ -1,10 +1,12 @@
 package org.example;
 
+import org.example.arraytest.Array;
+import org.example.arraytest.ArrayOperator;
+
 import java.util.Scanner;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
-
 /**
  * &#064;program: Demo01
  * &#064;description:
@@ -13,7 +15,7 @@ import static java.lang.System.out;
  *
  * @author GK_L2
  */
-public class Demo01 {
+public class Demo01 extends ArrayOperator{
     /**
      * Instantiates a new Demo 01.
      */
@@ -26,9 +28,18 @@ public class Demo01 {
      * @param args the input arguments
      */
     public static void main ( String[] args ) {
+        Array array = new Array();
         test1 ();
         test2 ();
         test3 ();
+        start();
+        array.setM();
+        array.setN();
+        start2();
+        array.setArr(array.getM(),array.getN());
+        output(array.getArr());
+        enter ();
+        System.out.println(max(array.getArr()));
     }
     
     /**
