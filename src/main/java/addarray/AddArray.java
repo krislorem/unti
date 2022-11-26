@@ -2,6 +2,8 @@ package addarray;
 
 
 import org.example.arraytest.Array;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
@@ -14,6 +16,7 @@ import java.util.Arrays;
  */
 
 public class AddArray {
+    @Contract ( pure = true )
     public AddArray ( ) {
     }
     public static void main ( String[] args ) {
@@ -24,7 +27,7 @@ public class AddArray {
         int[] arr2 = array.setArr1d ( 4 );
         System.out.println ( Arrays.toString ( addarray ( arr1 , arr2 ) ) );
     }
-    static int[] addarray( int[] arr1,int[] arr2){
+    static int[] addarray( int @NotNull [] arr1, int @NotNull [] arr2){
         int[] result = new int[arr1.length];
         int j = 0;
         if(arr2.length > arr1.length) {
@@ -93,15 +96,19 @@ public class AddArray {
         }
         return result;
     }
-    static int funadd (int a,int b,int c) {
-        if((a+b-c)<c){
+    @Contract ( pure = true )
+    static int funadd ( int a, int b, int c) {
+        if((a+b)<c){
             return a+b;
-        }else {
+        }
+        else {
             return a+b-c;
         }
-        
+    
+       
     }
-    static int funcarry (int a,int b,int c){
+    @Contract ( pure = true )
+    static int funcarry ( int a, int b, int c){
         if((a+b)>=c){
             if ( c == 1 ){
                 return 0;
@@ -112,7 +119,8 @@ public class AddArray {
             return 0;
         }
     }
-    static int funaddcheck (int a){
+    @Contract ( pure = true )
+    static int funaddcheck ( int a){
         return Math.max ( a , 0 );
     }
 }

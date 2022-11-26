@@ -1,0 +1,35 @@
+package ConnectJDBC;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import com.mysql.cj.jdbc.Driver;
+
+public class ConnectJDBC {
+
+	public static void main(String[] args) throws SQLException{
+		String driver = "com.mysql.cj.jdbc.Driver";
+		String URL = "jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false";
+		Connection con = null;
+		try
+		{
+			Class.forName(driver);
+		}
+		catch(java.lang.ClassNotFoundException e)
+		{
+			System.out.println("无法加载驱动.");
+		}
+		try
+		{
+			con=DriverManager.getConnection(URL,"root","密码");//这里输入你自己安装MySQL时候设置的用户名和密码，用户名默认为root
+			System.out.println("连接成功.");
+		}
+		catch(Exception e)
+		{
+			System.out.println("连接失败:" + e.getMessage());
+		}
+	}
+
+}
