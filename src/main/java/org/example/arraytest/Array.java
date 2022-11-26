@@ -14,8 +14,10 @@ public class Array {
     public Array ( ) {
     }
     
-    public void arrdeclare(){
-        System.out.println ( "input arr:" );
+    public int arrdeclare(){
+        Scanner scanner = new Scanner ( System.in);
+        System.out.println ( "input arr.length:" );
+        return scanner.nextInt ();
     }
     public void setArr ( int m , int n ) {
         arr = new int[ m ][ n ];

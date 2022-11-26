@@ -20,5 +20,16 @@
         </option>
       </PinnedGrepConsolesState>
     </option>
+    <option name="tailHistory">
+      <TailHistory>
+        <option name="items">
+          <set>
+            <TailItem>
+              <option name="path" value="$PROJECT_DIR$/../CelsiusConverter.jnlp" />
+            </TailItem>
+          </set>
+        </option>
+      </TailHistory>
+    </option>
   </component>
 </project>
