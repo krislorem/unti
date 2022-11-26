@@ -50,32 +50,32 @@ package myshopping.data;
                 customers[i] = new Customer();
             }
             // 客户1
-            customers[0].custNo = 1900;
-            customers[0].custBirth = "08/05";
-            customers[0].custScore = 2000;
+            customers[ 0 ].setCustNo ( 1900 );
+            customers[ 0 ].setCustBirth ( "08/05" );
+            customers[ 0 ].setCustScore ( 2000 );
             // 客户2
-            customers[1].custNo = 1711;
-            customers[1].custBirth = "07/13";
-            customers[1].custScore = 4000;
+            customers[ 1 ].setCustNo ( 1711 );
+            customers[ 1 ].setCustBirth ( "07/13" );
+            customers[ 1 ].setCustScore ( 4000 );
             // 客户3
-            customers[2].custNo = 1623;
-            customers[2].custBirth = "06/26";
-            customers[2].custScore = 5000;
+            customers[ 2 ].setCustNo ( 1623 );
+            customers[ 2 ].setCustBirth ( "06/26" );
+            customers[ 2 ].setCustScore ( 5000 );
             // 客户4
-            customers[3].custNo = 1545;
-            customers[3].custBirth = "04/08";
-            customers[3].custScore = 2200;
+            customers[ 3 ].setCustNo ( 1545 );
+            customers[ 3 ].setCustBirth ( "04/08" );
+            customers[ 3 ].setCustScore ( 2200 );
             // 客户5
-            customers[4].custNo = 1464;
-            customers[4].custBirth = "08/16";
-            customers[4].custScore = 1000;
+            customers[ 4 ].setCustNo ( 1464 );
+            customers[ 4 ].setCustBirth ( "08/16" );
+            customers[ 4 ].setCustScore ( 1000 );
             // 客户6
-            customers[5].custNo = 1372;
-            customers[5].custBirth = "12/23";
-            customers[5].custScore = 3000;
+            customers[ 5 ].setCustNo ( 1372 );
+            customers[ 5 ].setCustBirth ( "12/23" );
+            customers[ 5 ].setCustScore ( 3000 );
             // 客户7
-            customers[6].custNo = 1286;
-            customers[6].custBirth = "12/21";
-            customers[6].custScore = 10080;
+            customers[ 6 ].setCustNo ( 1286 );
+            customers[ 6 ].setCustBirth ( "12/21" );
+            customers[ 6 ].setCustScore ( 10080 );
         }
 }

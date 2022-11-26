@@ -61,7 +61,7 @@ public class ArrayOperator {//测试类
     
     /**
      *下面的所有静态方法前加上public则可被其他类所发现或继承，否则不会
-     *具体参照 branch master4
+     *具体参照 branch master4:unti/src/main/java/org/example/Demo01.java 
     */
     
     static void start(){//没什么好说的，为了调用方法而写方法

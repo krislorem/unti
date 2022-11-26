@@ -11,7 +11,9 @@ public class Test {
         System.out.println( "test" );
     }
     public static void main( String[] args) {
-      new Tourist();
-      new Tourist();
+        Tourist scan = new Tourist();
+        scan.setAge ( 13 );
+        scan.setName ("4");
+        scan.touristget( scan.getName ( ) , scan.getAge ( ) );
     }
 }

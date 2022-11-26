@@ -10,6 +10,7 @@ import myshopping.data.Goods;
  * &#064;create: -11-23 12:06
  * 客户信息管理
  *
+ * @author GK_L2
  */
 public class CustManagement {
     public CustManagement ( ) {

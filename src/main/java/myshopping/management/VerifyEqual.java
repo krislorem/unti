@@ -8,4 +8,11 @@ package myshopping.management;
  * @author GK_L2
  */
 public class VerifyEqual {
+    
+    public VerifyEqual ( ) {
+    }
+    
+    public boolean verify(String username,String password){
+        return false;
+    }
 }

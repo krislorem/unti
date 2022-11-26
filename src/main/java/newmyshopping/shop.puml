@@ -1,0 +1,124 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title MyShopping
+'autonumber
+
+'从左往右画用例图
+
+left to right direction
+
+'这个作用将线条模糊和扭曲化
+
+skinparam handwritten false
+skinparam packageStyle rectangle actor customer
+
+'下面的这些定  义了角色和用例的一些颜色设置
+
+skinparam usecase {
+BackgroundColor DarkBlue
+BorderColor DarkSlateGray
+ArrowColor DarkBlue
+ActorBorderColor DarkBlue
+ActorFontName Courier
+}
+
+'如果登录成功，
+'就调用Menu类中的showMainMenu()方法，
+'用于处理二级菜单---购物系统的主流程，
+'如果登录失败3次，就直接退出系统；
+
+'在Menu类中的showMainMenu()方法中，
+'通过选择不同的二级菜单选项，
+'从而调用Menu类中的showCustMMenu()方法来处理客户信息管理流程
+'或者调用Menu类中的showSendMenu()方法来处理抽奖活动流程，
+'亦或者调用Pay类中的calcPrice()方法来处理购物结算流程；
+
+class Menu {
+showLoginMenu();
+showMainMenu();
+showCustMMenu();
+showSendGMenu();
+}
+
+'StartSMS类是启动类，内含main方法，
+'这个类里面定义了VerifyEqual类和Data类的对象，
+'用来存储数据和验证信息，同时Data类中包含了Manager类，
+'用来存储预存的用户账号信息，然后在main方法中通过一定的逻辑，
+'去调用Menu类中的showLoginMenu()方法，
+'用于处理一级菜单---登录修改流程；
+
+class StartSMS{
+(仅有一个main方法
+用来处理一级菜单)
+}
+
+class VerifyEqual{
+(Verify()方法:
+验证账户密码)
+}
+
+class Manager{
+(存储预存的账户和
+密码)
+}
+
+class Data{
+(存储已有商品信息
+和客户信息)
+}
+
+'如果选择了二级菜单中的购物结算选项，
+'那么就会调用Pay类中的calcPrice()方法，
+'从而处理购物结算的流程，
+'注意在Pay类中的getDiscount()方法是用来根据客户会员信息来计算打折率的；
+
+class Pay{
+getDiscount();
+calcPrice();
+}
+
+'如果选择了二级菜单中的客户信息管理选项，
+'那么就会调用Menu类中的showCustMMenu()方法，
+'这个方法会调用CustManagement类中的各种方法，
+'用以处理客户信息管理的不同操作；
+
+class CustManagement{
+returnLastMenu();
+add();
+modify();
+search();
+show();
+}
+
+class Gift{
+toString();
+}
+
+'如果选择了二级菜单中的真情回馈选项，即抽奖活动，
+'那么就会调用Menu类中的showSendMenu()方法，
+'这个方法会调用GiftManagement类中的各种方法，
+'用以处理抽奖活动的不同操作；
+
+ '注意到在CustManagement类和GiftManagement类中都有一个returnLastMenu()方法，
+ '该方法是用来返回上一级菜单使用的。
+
+class GiftManagement{
+returnLastMenu();
+sendBirthCust();
+sendLuckyCust();
+sendGoldenCust();
+}
+
+StartSMS ---|> Menu : showLoginMenu()
+StartSMS ---|> Menu : showMainMenu()
+StartSMS <|- VerifyEqual
+StartSMS <|-- Data
+Manager --|> Data
+GiftManagement <|- Gift
+GiftManagement <|-- Menu
+Pay <|- Menu
+CustManagement <|-- Menu
+
+
+@enduml

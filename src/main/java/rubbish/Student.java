@@ -1,10 +1,11 @@
 package rubbish;
 
 /**
- * @program: Student
- * @description:
- * @author:XieMu
- * @create: -11-25 09:10
+ * &#064;program:  Student
+ * &#064;description:
+ * &#064;author:XieMu
+ * &#064;create:  -11-25 09:10
+ * @author GK_L2
  */
 public class Student {
     String name;
